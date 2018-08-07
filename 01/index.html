@@ -71,14 +71,16 @@
       //console.log(target)
       //console.log(audio)
       target.classList.add('playing')
-      target.addEventListener('transitionend',function(){
+      target.addEventListener('transitionend',function(e){
+        if(e.propertyName !== "transform") return
+        //propertyName 不是 transform 的物件就不用了
+        //transform 做完就移除playing這個class
         this.classList.remove('playing')
       })
       //跳回0s播放(不管有沒有播完,強制重頭播)
       audio.currentTime = 0 
       audio.play()
     }
-
     //按下鍵盤後，再判斷按了什麼鍵
     window.addEventListener('keydown',playSound)
 

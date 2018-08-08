@@ -5,3 +5,5 @@
 ## Demo
 
 + [day-1 JS Drum Kit](https://icguanyu.github.io/Js30/01) 
+
++ [day-1 JS and CSS Clock](https://icguanyu.github.io/Js30/02) 

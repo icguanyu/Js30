@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scoped CSS Variables and JS</title>
+</head>
+<body>
+  <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+
+  <div class="controls">
+    <label for="spacing">Spacing:</label>
+    <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+    <label for="blur">Blur:</label>
+    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+    <label for="base">Base Color</label>
+    <input id="base" type="color" name="color" value="#ffc600">
+  </div>
+
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+
+  <style>
+    body{
+      --color: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+    /* :root{
+      --color: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    } */
+    img{
+      background: var(--color);
+      padding: var(--spacing);
+      filter: blur(var(--blur));
+    }
+    h1{
+      color: var(--color);
+    }
+
+    body {
+      text-align: center;
+      background: #193549;
+      color: white;
+      font-family: 'helvetica neue', sans-serif;
+      font-weight: 100;
+      font-size: 50px;
+    }
+
+    .controls {
+      margin-bottom: 50px;
+    }
+
+    input {
+      width:100px;
+    }
+  </style>
+
+  <script>
+    const target = document.querySelectorAll('.controls input')
+    //取得所有input,
+    target.forEach((item)=>{
+      item.addEventListener('input',handler)
+    })
+    function handler(){
+      //利用dataset取的data-* attribute的值 ，或''（因為顏色沒有設data）
+      const suffix = this.dataset.sizing || ''
+      //剛好data都幫我們填好了,所以直接this.就可以取得^^""
+      document.querySelector('body').style.setProperty(`--${this.name}`, this.value + suffix);
+    }
+  </script>
+
+</body>
+</html>

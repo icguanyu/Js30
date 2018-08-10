@@ -9,3 +9,5 @@
 + [day-2 JS and CSS Clock](https://icguanyu.github.io/Js30/02) 
 
 + [day-3 CSS Variables](https://icguanyu.github.io/Js30/03)
+
++ [day-4 Array Cardio(1)](https://icguanyu.github.io/Js30/04)

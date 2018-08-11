@@ -11,3 +11,17 @@
 + [day-3 CSS Variables](https://icguanyu.github.io/Js30/03)
 
 + [day-4 Array Cardio(1)](https://icguanyu.github.io/Js30/04)
+
++ [day-5 Flex Panels](https://icguanyu.github.io/Js30/05)
+
++ [day-6 Comeing Soon](#)
+
++ [day-7 Comeing Soon](#)
+
++ [day-8 Comeing Soon](#)
+
++ [day-9 Comeing Soon](#)
+
++ [day-10 Comeing Soon](#)
+
++ [day-11 Comeing Soon](#)

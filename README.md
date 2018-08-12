@@ -14,14 +14,14 @@
 
 + [day-5 Flex Panels](https://icguanyu.github.io/Js30/05)
 
-+ [day-6 Comeing Soon](#)
++ [day-6 Type Ahead](https://icguanyu.github.io/Js30/06)
 
-+ [day-7 Comeing Soon](#)
++ [day-7 Comeing Soon](https://icguanyu.github.io/Js30/07)
 
-+ [day-8 Comeing Soon](#)
++ [day-8 Comeing Soon](https://icguanyu.github.io/Js30/08)
 
-+ [day-9 Comeing Soon](#)
++ [day-9 Comeing Soon](https://icguanyu.github.io/Js30/09)
 
-+ [day-10 Comeing Soon](#)
++ [day-10 Comeing Soon](https://icguanyu.github.io/Js30/10)
 
-+ [day-11 Comeing Soon](#)
++ [day-11 Comeing Soon](https://icguanyu.github.io/Js30/11)

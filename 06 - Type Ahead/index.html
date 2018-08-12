@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+let cities = [];
+
+fetch(endpoint)
+.then(blob=>{
+  return blob.json()
+})
+.then(data=>{
+  cities = data
+  //console.log(cities)
+});
+
+//過濾(尋找)涵式
+function findData(myvalue){
+  return cities.filter(place=>{
+    //定義一個正則運算:含有myvalue(字串)
+    //gi(比對方式):g=全局匹配;找到所有匹配，而不是在第一个匹配后停止。
+    const regex = new RegExp(myvalue, 'gi')
+    return place.city.match(regex) || place.state.match(regex)
+  })
+}
+//數字呈現(每三位數+,)的正則
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+
+function Handler(){
+  //去做資料過濾
+  const mySerchText = findData(this.value)
+  
+  //const mySerchText = cities.filter(place=>{
+  //  return place.city.includes(this.value)||place.state.includes(this.value)
+  //})//不用正則運算式的話只能找到完全相符的(限制大小寫)
+  const html = mySerchText.map(place=>{
+    //過濾後還要再加上樣式顏色
+    const regex = new RegExp(this.value,'gi')
+    //把原本只是字place.city(=this.value)加上class
+    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`)
+    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`)
+    return `
+      <li>
+        <span class="name">${cityName}, ${stateName}</span>
+        <span class="population">${numberWithCommas(place.population)}</span>
+      </li>
+    `
+  }).join('');
+  suggestions.innerHTML = html
+  //console.table(mySerchText)
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('input',Handler)
+
+</script>
+  </body>
+</html>

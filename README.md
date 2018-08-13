@@ -16,7 +16,7 @@
 
 + [day-6 Type Ahead](https://icguanyu.github.io/Js30/06)
 
-+ [day-7 Comeing Soon](https://icguanyu.github.io/Js30/07)
++ [day-7 Array Cardio(2)](https://icguanyu.github.io/Js30/07)
 
 + [day-8 Comeing Soon](https://icguanyu.github.io/Js30/08)
 

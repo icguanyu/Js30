@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪💪</title>
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // ## Array Cardio Day 2
+
+    const people = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+
+    // Some and Every Checks
+    // Array.prototype.some() // is at least one person 19 or older?
+    //判斷陣列中是否有任一年齡大於19的人。
+    const result_1 = people.some(who=>{
+      return new Date().getFullYear() - who.year >= 19
+    })
+    console.log(result_1)
+    // Array.prototype.every() // is everyone 19 or older?
+    //判斷陣列中是否每個人的年齡都大於19
+    const result_2 = people.every(who=>{
+      return new Date().getFullYear() - who.year >= 19
+    })
+    console.log(result_2)
+    // Array.prototype.find()
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+    // 找出符合ID為823423的物件：
+    const result_3 = comments.find(comment=>
+      comment.id === 823423
+    )
+    console.log(result_3)
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+    // 找出符合ID為823423的物件元素在陣列中的Index
+    const result_4 = comments.findIndex(comment=>
+      comment.id === 823423
+    )
+    console.log(result_4)
+
+    // delete the comment with the ID of 823423
+    // 找出符合ID為823423的物件元素在陣列中的Index並刪除它
+    const result_5 = comments.findIndex(comment=>
+      comment.id === 823423
+    )
+    comments.splice(result_5,1)
+    console.log(comments)
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+
+
+  <style>
+    html {
+      background:#018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+      background-size:cover;
+      font-family:'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display:flex;
+      flex:1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 5px solid black;
+      border-radius:50%;
+      margin:50px auto;
+      position: relative;
+      background: #fff;
+      background: #fff url('https://pre00.deviantart.net/7ea7/th/pre/i/2015/168/4/c/clock_face_11_by_stephenjohnsmith-d8xmo10.png');
+      background-size: contain;
+      padding:2rem;
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width:50%;
+      height:6px;
+      border-radius: 3px;
+      background:black;
+      position: absolute;
+      top:50%;
+      transform: rotate(90deg);
+      transform-origin: 100%;
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    }
+    .second-hand{
+      height: 3px;
+      background: red;
+    }
+    .hour-hand{
+      background: blue;
+    }
+    .min-hand{
+      background: green;
+    }
+
+  </style>
+
+  <script>
+
+    const secondPin = document.querySelector('.second-hand')
+    const minPin = document.querySelector('.min-hand')
+    const hourPin = document.querySelector('.hour-hand')
+    
+    const now = new Date()
+    const seconds = now.getSeconds()
+    const mins = now.getMinutes()
+    const hours = now.getHours()
+
+    var s_deg = seconds*(360/60) + 90
+    var m_deg = mins*(360/60) + seconds*(6/60) + 90 
+    var h_deg = hours*(360/12) + mins*(30/60) + 90    
+
+    function timeSet(){
+      s_deg += 360/60
+      m_deg += 360/(60*60) 
+      h_deg += 360/(60*60*12)
+      
+      secondPin.style.transform = `rotate(${s_deg}deg)`
+      minPin.style.transform = `rotate(${m_deg}deg)`
+      hourPin.style.transform = `rotate(${h_deg}deg)`
+    }
+    timeSet()
+    setInterval(timeSet,1000)
+
+  </script>
+</body>
+</html>

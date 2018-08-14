@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+  const canvas = document.querySelector('#draw')
+  const ctx = canvas.getContext('2d')
+  let startDrawing = false
+  let startPos = {x:0,y:0}
+  let hue = 0;//顏色
+  let direction = true;//判斷變粗或變細
+
+  ctx.strokeStyle = '#BADA55';
+    ctx.lineJoin = 'round';//角邊連結方式
+  ctx.lineCap = 'round';//末端以方形结束
+  ctx.lineWidth = 100;
+
+  function draw(e){
+    if(startDrawing){
+      ctx.beginPath()
+      ctx.moveTo(startPos.x, startPos.y);
+      ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+      //關鍵:畫完後起點要跑到滑鼠位置
+      startPos = { x:e.offsetX , y:e.offsetY }
+      //顏色
+      hue >= 360 ? hue = 0 : hue++
+      if(ctx.lineWidth>=100||ctx.lineWidth<=1) direction=!direction
+      direction ? ctx.lineWidth++ : ctx.lineWidth--
+    }
+  }
+  canvas.addEventListener('mousedown',e => {
+    startDrawing = true;
+    startPos = { x:e.offsetX , y:e.offsetY }
+  })
+  canvas.addEventListener('mousemove',draw)
+  canvas.addEventListener('mouseup', () => { startDrawing = false; })
+  canvas.addEventListener('mouseleave', () => { startDrawing = false; })
+  //mouseout和mouseleave差別
+</script>
+
+<style>
+  html, body {
+    margin:0;
+  }
+  #draw{
+    border: 1px solid #000;
+  }
+</style>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // 一般的console.log
+    console.log('hello');
+    
+    // 參數的方式 %s 印出後面的參數大便
+    console.log('我是--> %s <--參數!','💩');
+    
+    // 樣式，前面加上%c，逗號後放樣式
+    console.log('%c 自訂樣式', 'font-size:18px; background:red;font-family:"微軟正黑體"')
+    // warning!
+    console.warn('常看到的警告');
+    // Error :|
+    console.error('常看到的錯誤');
+    // Info
+    console.info('一般資訊');
+    // Testing
+    // clearing
+    console.log('console.clear()純粹把console全部清乾淨')
+    // Viewing DOM Elements
+    // Grouping together
+    // counting
+    // timing
+
+  </script>
+</body>
+</html>

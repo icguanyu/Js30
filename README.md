@@ -18,10 +18,10 @@
 
 + [day-7 Array Cardio(2)](https://icguanyu.github.io/Js30/07)
 
-+ [day-8 Comeing Soon](https://icguanyu.github.io/Js30/08)
++ [day-8 HTML5 Canvas](https://icguanyu.github.io/Js30/08)
 
-+ [day-9 Comeing Soon](https://icguanyu.github.io/Js30/09)
++ [day-9 Console Tricks!](https://icguanyu.github.io/Js30/09)
 
-+ [day-10 Comeing Soon](https://icguanyu.github.io/Js30/10)
++ [day-10 Multiple Checkboxes](https://icguanyu.github.io/Js30/10)
 
 + [day-11 Comeing Soon](https://icguanyu.github.io/Js30/11)

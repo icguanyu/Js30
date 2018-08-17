@@ -24,4 +24,20 @@
 
 + [day-10 Multiple Checkboxes](https://icguanyu.github.io/Js30/10)
 
-+ [day-11 Comeing Soon](https://icguanyu.github.io/Js30/11)
++ [day-11 HTML Video Player](https://icguanyu.github.io/Js30/11)
+
++ [day-12 Comeing Soon](https://icguanyu.github.io/Js30/12)
+
++ [day-13 Comeing Soon](https://icguanyu.github.io/Js30/13)
+
++ [day-14 Comeing Soon](https://icguanyu.github.io/Js30/14)
+
++ [day-15 Comeing Soon](https://icguanyu.github.io/Js30/15)
+
++ [day-16 Comeing Soon](https://icguanyu.github.io/Js30/16)
+
++ [day-17 Comeing Soon](https://icguanyu.github.io/Js30/17)
+
++ [day-18 Comeing Soon](https://icguanyu.github.io/Js30/18)
+
++ [day-19 Comeing Soon](https://icguanyu.github.io/Js30/19)

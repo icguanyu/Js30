@@ -25,9 +25,7 @@ playBtn.addEventListener('click',playToggle)
 function setHandler(e){
   const inputName = this.name
   const inputValue = this.value
-  console.log(myVideo.volume)
-
-  //myVideo[inputName] = inputValue
+  myVideo[inputName] = inputValue
 }
 inputBtn.forEach((input)=>{
   input.addEventListener('input',setHandler)

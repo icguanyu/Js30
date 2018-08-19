@@ -32,7 +32,7 @@
 
 + [day-14 JS Reference VS Copy](https://icguanyu.github.io/Js30/14)
 
-+ [day-15 Comeing Soon](https://icguanyu.github.io/Js30/15)
++ [day-15 LocalStorage](https://icguanyu.github.io/Js30/15)
 
 + [day-16 Comeing Soon](https://icguanyu.github.io/Js30/16)
 

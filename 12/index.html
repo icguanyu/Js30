@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+  <h1>鍵盤上輸入icguanyu有彩蛋</h1>
+<script>
+  const mykey = []
+  const code = 'icguanyu'
+
+  window.addEventListener('keyup',function(e){
+    let key = e.key
+    if(mykey.length<code.length){
+      mykey.push(key)
+    }else{
+      //mykey.shift()
+      mykey.push(key)
+    }
+    let toString = mykey.join('')
+    if(toString===code) alert('輸入正確,彩蛋出現')
+
+    console.log(mykey)
+  })  
+</script>
+</body>
+</html>

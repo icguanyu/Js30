@@ -26,11 +26,11 @@
 
 + [day-11 HTML Video Player](https://icguanyu.github.io/Js30/11)
 
-+ [day-12 Comeing Soon](https://icguanyu.github.io/Js30/12)
++ [day-12 Key Detection](https://icguanyu.github.io/Js30/12)
 
-+ [day-13 Comeing Soon](https://icguanyu.github.io/Js30/13)
++ [day-13 Slide in on Scroll](https://icguanyu.github.io/Js30/13)
 
-+ [day-14 Comeing Soon](https://icguanyu.github.io/Js30/14)
++ [day-14 JS Reference VS Copy](https://icguanyu.github.io/Js30/14)
 
 + [day-15 Comeing Soon](https://icguanyu.github.io/Js30/15)
 

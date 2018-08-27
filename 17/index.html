@@ -60,7 +60,7 @@ bands.sort((a,b) =>　check(a) > check(b) ? 1 : -1 )
 console.table(bands);
 document.querySelector('#bands').innerHTML = bands.map((item)=>{
   return `<li>${item}</li>`
-});
+}).join('');
 
 
 

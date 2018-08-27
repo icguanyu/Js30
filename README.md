@@ -34,9 +34,9 @@
 
 + [day-15 LocalStorage](https://icguanyu.github.io/Js30/15)
 
-+ [day-16 Comeing Soon](https://icguanyu.github.io/Js30/16)
++ [day-16 Mouse Shadow](https://icguanyu.github.io/Js30/16)
 
-+ [day-17 Comeing Soon](https://icguanyu.github.io/Js30/17)
++ [day-17 Sort Without Articles](https://icguanyu.github.io/Js30/17)
 
 + [day-18 Comeing Soon](https://icguanyu.github.io/Js30/18)
 

@@ -42,8 +42,8 @@
 
     function Handler(e) {
       const mousePos = {
-        x: e.offsetX,
-        y: e.offsetY
+        x: e.clientX,
+        y: e.clientY
       }
       console.log(mousePos)
       const centerX = window.innerWidth / 2 //中心點

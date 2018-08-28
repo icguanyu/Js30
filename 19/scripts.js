@@ -32,7 +32,7 @@ function takePhoto(){
   //console.log(dataURL)
   const link = document.createElement('a');
   link.href = dataURL;
-  link.setAttribute('download','handsome')
+  link.setAttribute('download','下載的檔案名稱')
   link.innerHTML = `<img src="${dataURL}" alt="Handsome Man" />`;
   strip.insertBefore(link, strip.firstChild);
   //strip.appendChild(link)

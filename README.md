@@ -42,9 +42,9 @@
 
 + [day-19 Get User Media Code Along!](https://icguanyu.github.io/Js30/19)
 
-+ [day-20 Comeing Soon](https://icguanyu.github.io/Js30/20)
++ [day-20 Speech Detection](https://icguanyu.github.io/Js30/20)
 
-+ [day-21 Comeing Soon](https://icguanyu.github.io/Js30/21)
++ [day-21 Geolocation](https://icguanyu.github.io/Js30/21)
 
 + [day-22 Comeing Soon](https://icguanyu.github.io/Js30/22)
 

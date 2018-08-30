@@ -93,7 +93,7 @@
     const show_speed = document.getElementById('speed')
     function getPos() {
       //getCurrentPosition
-      navigator.geolocation.getCurrentPosition(function (data) {
+      navigator.geolocation.watchPosition(function (data) {
         console.log(data)
         let latitude = data.coords.latitude;
         let longitude = data.coords.longitude;
@@ -112,8 +112,7 @@
         console.log('錯誤資訊:' + err)
       })
     }
-    
-    setInterval(getPos,1000)
+    getPos()
   </script>
 </body>
 

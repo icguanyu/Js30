@@ -26,6 +26,10 @@
       </g>
     </g></svg>
   <p>經度：<span id="latitude">0</span>；緯度：<span id="longitude">0</span></p>
+  <p>精準度accuracy：<span id="accuracy"></p>
+  <p>海拔高度altitude：<span id="altitude"></p>
+  <p>前進方向的角度heading：<span id="heading"></p>
+  <p>目前的速度(米/秒)speed：<span id="speed"></p>
   <style>
     html {
       font-size: 100px;
@@ -49,11 +53,15 @@
     }
 
     p {
+      text-align-last: left;
       color: #fff;
-      font-size: 24px;
+      font-size: 18px;
       font-family: '微軟正黑體';
+      margin: 0;
     }
-
+    span{
+      font-size: 24px;
+    }
     .arrow {
       width: 250px;
       overflow: hidden;
@@ -79,20 +87,33 @@
   <script>
     const show_latitude = document.getElementById('latitude')
     const show_longitude = document.getElementById('longitude')
+    const show_accuracy = document.getElementById('accuracy')
+    const show_altitude = document.getElementById('altitude')
+    const show_heading = document.getElementById('heading')
+    const show_speed = document.getElementById('speed')
     function getPos() {
-      navigator.geolocation.watchPosition(function (data) {
+      //getCurrentPosition
+      navigator.geolocation.getCurrentPosition(function (data) {
         console.log(data)
         let latitude = data.coords.latitude;
         let longitude = data.coords.longitude;
+        let accuracy = data.coords.accuracy;
+        let altitude = data.coords.altitude;
+        let heading = data.coords.heading;
+        let speed = data.coords.speed
         show_latitude.textContent = longitude.toFixed(3)
         show_longitude.textContent = latitude.toFixed(3)//取到後三位
+        show_accuracy.textContent = accuracy
+        show_altitude.textContent = altitude
+        show_heading.textContent = heading
+        show_speed.textContent = speed
+
       }, function (err) {
         console.log('錯誤資訊:' + err)
       })
-
-      requestAnimationFrame(getPos)
     }
-    requestAnimationFrame(getPos)
+    
+    setInterval(getPos,1000)
   </script>
 </body>
 

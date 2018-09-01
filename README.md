@@ -46,8 +46,8 @@
 
 + [day-21 Geolocation](https://icguanyu.github.io/Js30/21)
 
-+ [day-22 Comeing Soon](https://icguanyu.github.io/Js30/22)
++ [day-22 Follow Along Nav](https://icguanyu.github.io/Js30/22)
 
-+ [day-23 Comeing Soon](https://icguanyu.github.io/Js30/23)
++ [day-23 Speech Synthesis](https://icguanyu.github.io/Js30/23)
 
-+ [day-24 Comeing Soon](https://icguanyu.github.io/Js30/24)
++ [day-24 Sticky Nav](https://icguanyu.github.io/Js30/24)

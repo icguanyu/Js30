@@ -51,3 +51,15 @@
 + [day-23 Speech Synthesis](https://icguanyu.github.io/Js30/23)
 
 + [day-24 Sticky Nav](https://icguanyu.github.io/Js30/24)
+
++ [day-25 Event Capture](https://icguanyu.github.io/Js30/25)
+
++ [day-26 Stripe Follow Along Nav](https://icguanyu.github.io/Js30/26)
+
++ [day-27 coming soon Nav](https://icguanyu.github.io/Js30/27)
+
++ [day-28 coming soon Nav](https://icguanyu.github.io/Js30/28)
+
++ [day-29 coming soon Nav](https://icguanyu.github.io/Js30/29)
+
++ [day-30 coming soon Nav](https://icguanyu.github.io/Js30/30)

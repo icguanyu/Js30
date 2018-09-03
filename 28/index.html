@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Speed Scrubber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+
+<script>
+  const speed = document.querySelector('.speed')
+  const speed_bar = document.querySelector('.speed-bar')
+  const video = document.querySelector('.flex');
+  function handler(e){
+    let mouseY = e.pageY - this.offsetTop // 滑鼠在bar裡面的高度
+    let speed_height = this.offsetHeight // bar的高
+    let min = 0.5;//可加可不加,設定最慢播放速度
+    let bar_height = (mouseY/speed_height)*100 +'%'
+    let textval = ((mouseY/speed_height*4)+min).toFixed(2)
+    speed_bar.style.height = bar_height
+    speed_bar.textContent = textval + 'x'
+    video.playbackRate = textval
+  }
+
+  speed.addEventListener('mousemove',handler)
+</script>
+</body>
+</html>

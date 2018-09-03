@@ -56,10 +56,10 @@
 
 + [day-26 Stripe Follow Along Nav](https://icguanyu.github.io/Js30/26)
 
-+ [day-27 coming soon Nav](https://icguanyu.github.io/Js30/27)
++ [day-27 Click and Drag](https://icguanyu.github.io/Js30/27)
 
-+ [day-28 coming soon Nav](https://icguanyu.github.io/Js30/28)
++ [day-28 Video Speed Controller](https://icguanyu.github.io/Js30/28)
 
-+ [day-29 coming soon Nav](https://icguanyu.github.io/Js30/29)
++ [day-29 Countdown Timer](https://icguanyu.github.io/Js30/29)
 
-+ [day-30 coming soon Nav](https://icguanyu.github.io/Js30/30)
++ [day-30 Whack A Mole](https://icguanyu.github.io/Js30/30)

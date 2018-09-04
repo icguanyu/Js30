@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Whack A Mole!</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <h1>Whack-a-mole! <span class="score">0</span></h1>
   <button onClick="startGame()">Start!</button>
-
   <div class="game">
+
+    <div class="hammer"></div>
     <div class="hole hole1">
       <div class="mole"></div>
     </div>
@@ -32,11 +35,88 @@
     </div>
   </div>
 
-<script>
-  const holes = document.querySelectorAll('.hole');
-  const scoreBoard = document.querySelector('.score');
-  const moles = document.querySelectorAll('.mole');
 
-</script>
+
+  <script>
+    const holes = document.querySelectorAll('.hole');
+    const scoreBoard = document.querySelector('.score');
+    const moles = document.querySelectorAll('.mole');
+    const game = document.querySelector('.game')
+    const hammer = document.querySelector('.hammer')
+    let timpUp = false
+    let score = 0
+    let last;//最後一個出現的
+
+
+    function startGame() {
+      timeUp = false
+      score = 0
+      scoreBoard.textContent = score
+      show()
+      setTimeout(() => {
+        timeUp = true
+      }, 10000) //遊戲時間10秒
+    }
+
+    function getTime() {//自訂時間:0.5s(500)~1s(1000)間
+      return Math.floor(Math.random() * 1000 + 500)
+    }
+
+    function getHole() {//0~5的洞
+      const now = Math.floor(Math.random() * 5) //四捨五入
+      const hole = holes[now]
+      if (hole === last) {// 如果下一個等於上一個(重複)就再取一次
+        console.log('重複');
+        return getHole()
+      }
+      last = hole
+      console.log(now)
+      return hole
+    }
+
+    function show() {
+      const time = getTime()
+      const hole = getHole()
+      hole.classList.add('up')
+      setTimeout(() => {
+        hole.classList.remove('up')
+        if (!timeUp) show();//時間還沒到繼續做
+      }, time);
+    }
+
+
+    function hit() {
+      score++
+      scoreBoard.textContent = score;
+      this.parentNode.classList.remove('up')//地鼠的上層,控制地鼠的DOM
+      //console.log(this.parentNode)
+      this.style.pointerEvents = 'none'//暫時讓地鼠不可再被點擊
+
+      setTimeout(() => {//0.5秒後才可再被點擊
+        this.style.pointerEvents = 'visible'
+      }, 500)
+    }
+
+    function handler(e) {
+      const mousePos = {
+        x: e.pageX,
+        y: e.pageY
+      }
+      console.log(mousePos)
+      hammer.style.top = mousePos.y-120 + 'px'
+      hammer.style.left = mousePos.x-80 + 'px'
+    }
+
+    moles.forEach((mole) => mole.addEventListener('click', hit))
+
+    game.addEventListener('mousemove', handler)
+    document.addEventListener('mousedown', () => {
+      hammer.style.transform = 'rotate(-45deg)'
+    })
+    document.addEventListener('mouseup', () => {
+      hammer.style.transform = 'rotate(0deg)'
+    })
+  </script>
 </body>
+
 </html>

@@ -44,20 +44,21 @@
     return Math.round(Math.random() * (max - min) + min);
   }
 
-  function randomHole(holes) {
+  function randomHole() {
     const idx = Math.floor(Math.random() * holes.length);
     const hole = holes[idx];
     if (hole === lastHole) {
       console.log('Ah nah thats the same one bud');
-      return randomHole(holes);
+      return randomHole();
     }
     lastHole = hole;
+    console.log(idx)
     return hole;
   }
 
   function peep() {
-    const time = randomTime(200, 1000);
-    const hole = randomHole(holes);
+    const time = randomTime(200,200);
+    const hole = randomHole();
     hole.classList.add('up');
     setTimeout(() => {
       hole.classList.remove('up');
@@ -77,10 +78,15 @@
     if(!e.isTrusted) return; // cheater!
     score++;
     this.parentNode.classList.remove('up');
+    this.style.pointerEvents= 'none'
     scoreBoard.textContent = score;
+    //緩衝
+    setTimeout(()=>{
+      this.style.pointerEvents= 'visible'
+    },500)
   }
 
-  moles.forEach(mole => mole.addEventListener('click', bonk));
+  moles.forEach(mole => {mole.addEventListener('click',bonk)});
 
 </script>
 </body>
